@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
     <title> | Metrorex S.A</title>
     <link rel="icon" href="/poze-icons/metro_icon.png" type="image/x-icon">
-    <link rel="preconnect" href="https://www.gstatic.com">
+
     <link rel="stylesheet" href="/css_/style_default.css">
     <link rel="stylesheet" href="/css_/style_navbar.css">
     <link rel="stylesheet" href="/css_/style_button_submit_form.css">
@@ -67,7 +66,9 @@
                     <input type="password" id="password" name="password"  required>
                     <a href="/forgot-password_html/forgot_password.html" style="color: rgb(0, 0, 0); text-decoration: underline; font-size: 12px;">Am uitat parola</a>
                     <div class="button-container">
-                        <a href="#" id="submit_link"><span>Autentificare</span></a>
+                        <button type="submit" class="button-link">
+                            Inregistrare
+                        </button> 
                     </div>
                 </form>
             </section>
@@ -118,9 +119,7 @@
             <a class="footer-icon" aria-label="Visa"><img src="/poze-icons/visa.png" alt="Visa" loading="lazy" width="50" height="50"></a>
         </section>
     </footer>
-    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <script defer type="module" src="/script_java/login.js"></script>
 </body>
 

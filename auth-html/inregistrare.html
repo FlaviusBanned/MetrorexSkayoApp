@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <title> | Metrorex S.A</title>
+
+    <link rel="preconnect" href="https://www.gstatic.com">
+
+    <link rel="icon" href="/poze-icons/metro_icon.png" type="image/x-icon"> 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <link rel="stylesheet" href="/css_3(inregistrare)/style_default.css">
+    <link rel="stylesheet" href="/css_3(inregistrare)/style_button_submit.css">
+    <link rel="stylesheet" href="/css_3(inregistrare)/style_header(navbar).css">
+    <link rel="stylesheet" href="/css_3(inregistrare)/style_form_inreg.css">
+    <link rel="stylesheet" href="/css_3(inregistrare)/style_about_footer_signup.css">
+    <link rel="stylesheet" href="/css_3(inregistrare)/style_about_info_pass.css">
+    <link rel="stylesheet" href="/css6_user_pages/ab_active_form.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav class="nav-links">
+            <a href="/auth-html/inregistrare.html">Inregistrare</a>
+            <a href="/index.html">Autentificare</a>
+           
+        </nav>
+    </header>
+    <section class="register-section">
+        <form class="register-form" id="register-form">
+            <div class="register-header">
+                <div class="text-container">
+                    <h2>INREGISTRARE</h2>
+                    <figcaption>Metrorex S.A</figcaption>
+                </div>
+                <img src="/poze-gov/metro_sign_black.png" class="login-icon" alt="Metro Sign">
+            </div>
+    
+            <label for="first-name">Prenume:<span class="required">*</span></label>
+            <input type="text" id="first-name" name="first_name"  required>
+    
+            <label for="last-name">Nume:<span class="required">*</span></label>
+            <input type="text" id="last-name" name="last_name"  required>
+    
+            <label for="cnp">CNP:<span class="required">*</span></label>
+            <input type="text" id="cnp" name="cnp" pattern="\d{13}" required>
+    
+            <label for="bdate">Data nasterii:<span class="required">*</span></label>
+            <input type="date" id="bdate" name="bdate"  required>
+    
+            <label for="email">Email:<span class="required">*</span></label>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._]+@(yahoo\.com|gmail\.com|outlook\.com)"  required>
+    
+            <label for="password">Parola:<span class="required">*</span></label>
+            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}" required>
+    
+            <label for="re-type_password">Reintroduceti parola:<span class="required">*</span></label>
+            <input type="password" id="re-type_password" name="re-type_password"  required>
+    
+            <div class="button-container">
+                <button type="submit" class="button-link">
+                    Inregistrare
+                </button>                
+            </div>
+            
+        </form>
+    </section>
+    
+    
+    <figure class="metro_default_image">
+        <img src="/metrou-back.jpg" alt="Metrorex S.A Image">
+    </figure>
+    <section class="info-section">
+        <div class="info-container">
+            <div class="info-column">
+                <h2>Despre Metrorex</h2>
+                <ul>
+                    <li>Conducere</li>
+                    <li>Programe și strategii</li>
+                    <li>Rapoarte și studii</li>
+                    <li>Proiecte derulate în cadrul Metrorex</li>
+                </ul>
+            </div>
+            <div class="info-column">
+                <h2>Servicii</h2>
+                <ul>
+                    <li>Programe de circulație</li>
+                    <li>Titluri de călătorie</li>
+                    <li>Reguli de călătorie cu metroul</li>
+                    <li>Puncte de vânzare a titlurilor de călătorie</li>
+                    <li>Tratare cazuri funcționare defectuoasă carduri / cartele magnetice</li>
+                </ul>
+            </div>
+            <div class="info-column">
+                <h2>Interes public</h2>
+                <ul>
+                    <li>Solicitare informații. Legislatie</li>
+                    <li>Bugetul de venituri și cheltuieli</li>
+                    <li>Întrebări și răspunsuri prestabilite</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <section class="footer_icons">
+            <a  class="footer-icon" aria-label="American-Express"><img src="/poze-icons/american-express.png" alt="American-Express"></a>
+            <a  class="footer-icon" aria-label="Amex"><img src="/poze-icons/amex.png" alt="Amex"></a>
+            <a  class="footer-icon" aria-label="Apple-Pay"><img src="/poze-icons/apple-pay.png" alt="Apple-Pay"></a>
+            <a  class="footer-icon" aria-label="Maestro"><img src="/poze-icons/maestro.png" alt="Maestro"></a>
+            <a  class="footer-icon" aria-label="MasterCard"><img src="/poze-icons/master-card.png" alt="MasterCard"></a>
+            <a  class="footer-icon" aria-label="Paypal"><img src="/poze-icons/paypal.png" alt="Paypal"></a>
+            <a  class="footer-icon" aria-label="Stripe"><img src="/poze-icons/stripe.png" alt="Stripe"></a>
+            <a  class="footer-icon" aria-label="Visa"><img src="/poze-icons/visa.png" alt="Visa"></a>
+        </section>
+    </footer>
+    <script defer type="module" src="/script_java/register.js"></script>
+</body>
+</html>

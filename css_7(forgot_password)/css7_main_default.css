@@ -1,0 +1,244 @@
+/* Definirea variabilelor la nivelul rădăcinii */
+:root {
+    --background-color: #282c34;
+    --background-overlay-color: #282c34;
+    --secondary-color: #ffffff;
+    --button-bg-start: #ff7e5f;
+    --button-bg-end: #feb47b;
+    --button-text-color: #ffffff;
+    --button-hover-text-color: #333;
+    --button-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --button-transition-duration: 0.3s;
+    
+
+    --font-family: 'Arial', sans-serif;
+    --button-font-size: 16px;
+    --button-font-weight: bold;
+    --button-padding: 15px 30px;
+    --button-height: 50px;
+    --button-width: 200px;
+    --button-border-radius: 15px;
+    --border-radius: 10px;
+    --container-width: 100%;
+    --container-height: 100%;
+    
+    /* Alte efecte */
+    --blur-effect: 5px;
+    --button-hover-opacity: 0.8;
+    --button-hover-transform: translateY(-2px);
+    --button-bg-hover-position: left top;
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/metrou-back.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    background-color: var(--background-overlay-color); 
+    filter: blur(var(--blur-effect)); 
+    z-index: -1;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--container-width);
+    height: var(--container-height);
+    background: rgba(0, 0, 0, 0);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.glass-overlay {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+    text-align: left;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 80%;
+    max-width: 450px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+
+input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+    font-family: var(--font-family);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    padding: var(--button-padding);
+    height: var(--button-height);
+    width: var(--button-width);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: var(--button-border-radius);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, var(--button-bg-start) -5%, var(--button-bg-end) 20%, var(--button-bg-end) 10%, var(--button-bg-start) 50%);
+    background-size: 100% 100%;
+    background-position: right bottom;
+    transition: background-position var(--button-transition-duration) ease, transform var(--button-transition-duration) ease, box-shadow var(--button-transition-duration) ease, opacity var(--button-transition-duration) ease;
+    box-shadow: var(--button-shadow);
+    display: inline-block;
+    z-index: 1;
+}
+
+.button-container:hover {
+    opacity: var(--button-hover-opacity);
+    transform: var(--button-hover-transform);
+    box-shadow: var(--button-hover-shadow);
+    background-position: var(--button-bg-hover-position);
+}
+
+.button-container::before,
+.button-container::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: inherit;
+    transition: transform var(--button-transition-duration) ease;
+    z-index: 1;
+}
+
+.button-container::before {
+    transform: skewX(45deg) translateX(-50%);
+}
+
+.button-container::after {
+    transform: skewX(-45deg) translateX(10%);
+}
+
+.button-container:hover::before {
+    transform: skewX(40deg) translateX(20%);
+}
+
+.button-container:hover::after {
+    transform: skewX(30deg) translateX(-150%);
+}
+
+.button-container span {
+    position: relative;
+    z-index: 99;
+}
+
+.button-container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container a span {
+    font-size: var(--button-font-size);
+    color: var(--button-text-color);
+    transition: opacity var(--button-transition-duration) ease, transform var(--button-transition-duration) ease, box-shadow var(--button-transition-duration) ease;
+}
+
+.button-container:hover a span {
+    color: var(--button-hover-text-color);
+}
+
+.popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--secondary-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    max-width: 90%;
+    flex-direction: row;
+}
+
+.popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 600px) {
+    .popup {
+        width: 85%;
+        top: 20%;
+    }
+}

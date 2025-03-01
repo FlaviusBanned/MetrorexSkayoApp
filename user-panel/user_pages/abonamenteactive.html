@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <title> | Abonamente active </title>
+    <link rel="icon" href="/poze-icons/metro_icon.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="/css_4_other_elements/form_divider.css">
+    <link rel="stylesheet" href="/css_5_user_panel/style_aside_bar.css">
+    <link rel="stylesheet" href="/css_5_user_panel/user_panel_background.css">
+    <link rel="stylesheet" href="/css6_user_pages/abonamente_active_main.css">
+    <link rel="stylesheet" href="/css6_user_pages/ab_active_form.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle">&#9776; Meniu</button>
+
+    <aside class="sidebar hidden" id="sidebar">
+        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Cumpara</a>
+        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">Istoric</a>
+        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Editeaza Profilul</a>
+        <a href="/user-panel/user_pages/statusabonamente.html" class="sidebar-btn" >Status Abonament</a>
+        <a href="#" class="sidebar-btn close-btn" id="close-btn">Inchide Meniul</a>
+        <a href="/index.html" class="sidebar-btn logout-btn">Delogare</a>
+    </aside>   
+    <main class="main-content" id="main-content">
+        <section id="purchase-section">
+                <h2 style="text-shadow: 
+                1px 1px 0 #000,  
+               -1px -1px 0 #000,
+                1px -1px 0 #000,
+               -1px 1px 0 #000;">Cumpara Abonament/Cartela Metrorex</h2>
+        
+            <hr class="form-divider">
+            <form id="purchase-form">
+                <div class="form-control">
+                    <label for="subscription-type">Tip:</label>
+                    <select id="subscription-type" name="subscription-type" required>
+                        <option value="" disabled selected>Alegeti</option>
+                        <option value="card-1">Card 1 călătorie – 3 RON</option>
+                        <option value="card-2">Card cu 2 călătorii – 6 RON</option>
+                        <option value="card-24">Card 24 de ore – 8 RON</option>
+                        <option value="card-72">Card 72 ore – 20 RON</option>
+                        <option value="card-10">Card 10 călătorii – 25 RON</option>
+                        <option value="weekly">Abonament săptămânal – 30 RON</option>
+                        <option value="monthly">Abonament lunar – 80 RON</option>
+                        <option value="biannual">Abonament bi-anual – 400 RON</option>
+                        <option value="annual">Abonament anual – 700 RON</option>
+                        <option value="student">Abonament lunar pentru studenți – 8 RON</option>
+                        <option value="donor">Abonament lunar donatori de sânge – 40 RON</option>
+                        <option value="elevi">Abonament lunar pentru elevi – gratuit</option>
+                    </select>
+                </div>
+ 
+                <div class="button-container">
+                    <div class="button-container">
+                        <a href="#" id="purchase" class="purchase-btn">Purchase</a>
+                    </div>
+                </div>
+                <div id="message-popup" class="popup">
+                    <span id="popup-message"></span>
+                </div>                
+                <br><br>
+            </form>
+        </section>
+    </main>
+    <style>
+        .popup {
+            position: fixed;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .popup.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('close-btn');
+    const mainContent = document.getElementById('main-content');
+
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.add('sidebar-visible');
+        sidebar.classList.remove('hidden');
+        menuToggle.style.display = 'none'; 
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('sidebar-visible');
+        sidebar.classList.add('hidden');
+        menuToggle.style.display = 'block'; 
+    });
+});
+
+    </script>
+     <script defer type="module" src="/script_java_user_panel/add_subscription_data.js"></script>
+     <script defer type="module" src="/script_java_user_panel/script_java_reset_pass_logged_in.js"></script>
+</body>
+</html>
+<style>
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 15px;
+}
+
+.purchase-btn {
+    display: inline-block;
+    text-decoration: none; 
+    background-color: #2A2BFF;
+    color: #FFFFFF;
+    border: 2px solid #3A3CFF; 
+    padding: 8px 16px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 14px; 
+    letter-spacing: 0.5px; 
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.purchase-btn:hover {
+    background-color: #0004ead7; 
+    border-color: #1A1BFF; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
+}
+
+.purchase-btn:focus {
+    background-color: #5A5CFF; 
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); 
+    transform: translateY(1px); 
+}
+
+</style>

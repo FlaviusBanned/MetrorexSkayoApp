@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <title> | Status abonament </title>
+    <link rel="icon" href="/poze-icons/metro_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css_4_other_elements/form_divider.css">
+    <link rel="stylesheet" href="/css_5_user_panel/style_aside_bar.css">
+    <link rel="stylesheet" href="/css_5_user_panel/user_panel_background.css">
+    <link rel="stylesheet" href="/css6_user_pages/abonamente_active_main.css">
+    <link rel="stylesheet" href="/css_9_status/form_dynamic_and_button_con.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle">&#9776; Meniu</button>
+    
+    <aside class="sidebar hidden" id="sidebar">
+        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Cumpara</a>
+        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">Istoric</a>
+        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Editeaza Profilul</a>
+        <a href="/user-panel/user_pages/statusabonamente.html" class="sidebar-btn" >Status Abonament</a>
+        <a href="#" class="sidebar-btn close-btn" id="close-btn">Inchide Meniul</a>
+        <a href="/index.html" class="sidebar-btn logout-btn">Delogare</a>
+    </aside>    
+    <main class="main-content" id="main-content">
+        <section id="purchase-section">
+            <h2 style="text-shadow: 1px 1px 0 #000,  -1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;">Verifica Status </h2>
+           
+            <hr class="form-divider">
+                <form id="verification-form" action="https://formspree.io/f/{your-form-id}" method="POST">
+                    
+                    <label for="beneficiary-type">Selectati Tipul de Beneficiar:</label>
+                    <select id="beneficiary-type" name="beneficiary-type" required 
+                        style=" border-radius: 10px; height: 30px;
+                               border: 2px solid #ccc; font-size: 14px; background-color: #fff; 
+                              cursor: pointer;">
+                        <option value="" disabled selected>Alegeti</option>
+                        <option value="student">Student</option>
+                        <option value="pupil">Elev</option>
+                    </select>
+                    <div id="dynamic-fields"></div>  
+                    <button type="submit" class="btn-submit">Confirm</button>
+                </form>
+        </section>
+        
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             const menuToggle = document.getElementById('menu-toggle');
+             const sidebar = document.getElementById('sidebar');
+             const closeBtn = document.getElementById('close-btn');
+             menuToggle.addEventListener('click', () => {
+                 sidebar.classList.add('sidebar-visible');
+                 sidebar.classList.remove('hidden');
+                 menuToggle.style.display = 'none'; 
+             });
+             closeBtn.addEventListener('click', () => {
+                 sidebar.classList.remove('sidebar-visible');
+                 sidebar.classList.add('hidden');
+                 menuToggle.style.display = 'block';  
+             });
+         });
+     </script>
+ <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script defer type="module" src="/script_dynamic_input_status/dynamicForm.js"></script>
+</body>
+</html>

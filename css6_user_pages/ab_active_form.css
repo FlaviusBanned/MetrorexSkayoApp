@@ -1,0 +1,41 @@
+.form-control {
+    position: relative; 
+}
+
+.form-control label {
+    display: block; 
+    margin-bottom: 10px; 
+    font-weight: bold; 
+    margin-top: 10px;
+}
+
+.form-control select {
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    padding: 10px; 
+    background-color: #fff; 
+    font-size: 16px; 
+    color: #333; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 60%; 
+    outline: none; 
+    
+}
+.form-control input {
+    border-radius: 8px; 
+    border: 1px solid #ddd; 
+    outline: none; 
+   background: #f9f9f9;
+   margin-top: 5px;
+   padding: 1%; 
+}
+
+.form-control input:focus {
+  border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    outline: none; 
+}
+
+.form-control select option {
+    padding: 10px; 
+}

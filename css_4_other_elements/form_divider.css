@@ -1,0 +1,7 @@
+.form-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, rgba(0, 123, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(0, 123, 255, 0) 100%);
+    margin: 20px 0 30px;
+    width: 100%;
+}

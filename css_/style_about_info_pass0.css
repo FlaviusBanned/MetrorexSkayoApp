@@ -1,0 +1,111 @@
+:root {
+    --main-bg-color: #f4f4f4;
+    --card-bg-color: #fff;
+    --card-border-radius: 8px;
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --text-primary-color: #333;
+    --text-secondary-color: #555;
+    --font-size-title: 1.5rem;
+    --font-size-list: 1rem;
+    --font-size-title-small: 1.25rem;
+    --font-size-list-small: 0.9rem;
+    --gap-size: 20px;
+    --max-width-container: 1200px;
+    --padding-section: 20px;
+    --padding-card: 15px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.info-section {
+    padding: var(--padding-section);
+    margin: 0;
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-size);
+    width: 100%;
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    padding: 0 var(--padding-section);
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.info-column {
+    background-color: var(--card-bg-color);
+    padding: var(--padding-card);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.info-column h2 {
+    margin-bottom: var(--gap-size);
+    font-size: var(--font-size-title);
+    color: var(--text-primary-color);
+}
+
+.info-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-column li {
+    margin-bottom: 10px;
+    font-size: var(--font-size-list);
+    color: var(--text-secondary-color);
+}
+
+
+@media (min-width: 1200px) {
+    .info-container {
+        max-width: 90%;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .info-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .info-section {
+        margin: 0;
+        flex-grow: 1;
+    }
+
+    .info-container {
+        grid-template-columns: 1fr;
+        padding: 0;
+        transform: none;
+        position: static;
+        left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-column h2 {
+        font-size: var(--font-size-title-small);
+    }
+
+    .info-column li {
+        font-size: var(--font-size-list-small);
+    }
+}

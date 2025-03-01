@@ -1,0 +1,51 @@
+:root {
+    --footer-bg-start: #dbcdcd; 
+    --footer-bg-end: #ffffff; 
+    --footer-padding: 20px; 
+    --footer-text-color: #fff; 
+    --footer-icon-size: 40px; 
+    --footer-icon-opacity: 0.7; 
+    --footer-transition: 0.3s ease; 
+    --footer-icon-gap: 10px;
+}
+.footer {
+    background: linear-gradient(to right, var(--footer-bg-start) 20%, var(--footer-bg-end) 40%, var(--footer-bg-end) 60%, var(--footer-bg-start) 80%);
+    padding: var(--footer-padding);
+    text-align: center;
+    color: var(--footer-text-color);
+    transform: translateY(0%);
+    margin: 0;
+}
+.footer_icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--footer-icon-gap);
+}
+
+
+.footer-icon img {
+    width: var(--footer-icon-size);
+    height: var(--footer-icon-size);
+    object-fit: contain;
+    transition: opacity var(--footer-transition);
+}
+
+
+.footer-icon img:hover {
+    opacity: var(--footer-icon-opacity);
+}
+
+
+@media (max-width: 600px) {
+    .footer {
+        margin: 0;
+        flex-grow: 1;
+    }
+
+    .footer_icons {
+        flex-direction: row; 
+        overflow-x: auto; 
+        white-space: nowrap; 
+    }
+}

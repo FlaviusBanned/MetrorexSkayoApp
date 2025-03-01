@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <title> | Istoric abonamente </title>
+    <link rel="icon" href="/poze-icons/metro_icon.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="/css_5_user_panel/style_aside_bar.css">
+    <link rel="stylesheet" href="/css_5_user_panel/user_panel_background.css">
+    <link rel="stylesheet" href="/css6_user_pages/abonamente_active_main.css">
+    <link rel="stylesheet" href="/css8_common_button_user_pages/css8_istoric_ab.css">
+    <script defer type="module" src="/script_java_user_panel/retrieve_subscription_data.js"></script>
+
+    
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle">&#9776; Menu</button>
+    <aside class="sidebar hidden" id="sidebar">
+        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Cumpara</a>
+        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">Istoric</a>
+        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Editeaza Profilul</a>
+        <a href="/user-panel/user_pages/statusabonamente.html" class="sidebar-btn" >Status Abonament</a>
+        <a href="#" class="sidebar-btn close-btn" id="close-btn">Inchide Meniul</a>
+        <a href="/index.html" class="sidebar-btn logout-btn">Delogare</a>
+    </aside> 
+    <main class="main-content" id="main-content">
+        <section id="subscriptions-section">
+            <h2 style="text-shadow: 
+            1px 1px 0 #000,  
+           -1px -1px 0 #000,
+            1px -1px 0 #000,
+           -1px 1px 0 #000;">Istoric Abonamente/Cartele</h2>
+            <hr class="form-divider">
+            <table id="subscriptions-table">
+                <thead>
+                    <tr>
+                        <th>Tip</th>
+                        <th>Data Inceput</th>
+                        <th>Data Sfarsit</th>
+                        <th>Pret (RON)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             const menuToggle = document.getElementById('menu-toggle');
+             const sidebar = document.getElementById('sidebar');
+             const closeBtn = document.getElementById('close-btn');
+ 
+             menuToggle.addEventListener('click', () => {
+                 sidebar.classList.add('sidebar-visible');
+                 sidebar.classList.remove('hidden');
+                 menuToggle.style.display = 'none';  
+             });
+
+             closeBtn.addEventListener('click', () => {
+                 sidebar.classList.remove('sidebar-visible');
+                 sidebar.classList.add('hidden');
+                 menuToggle.style.display = 'block';  
+             });
+         });
+     </script>
+ 
+</body>
+</html>
